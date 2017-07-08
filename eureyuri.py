@@ -11,8 +11,28 @@ def page_not_found(e):
 
 
 @app.route('/', methods=["GET"])
-def hello_world():
-    return 'Hello World!'
+def index():
+    return render_template("index.html")
+
+
+@app.route('/about', methods=["GET"])
+def about():
+    return render_template("about.html")
+
+
+@app.route('/work', methods=["GET"])
+def work():
+    return render_template("work.html")
+
+
+@app.route('/apps', methods=["GET"])
+def apps():
+    return render_template("apps.html")
+
+
+@app.route('/contact', methods=["GET"])
+def contact():
+    return render_template("contact.html")
 
 
 if __name__ == '__main__':

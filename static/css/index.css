@@ -1,0 +1,32 @@
+video#bgvid {
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto !important;
+    z-index: -100;
+    position: fixed;
+    background-size: cover;
+}
+
+#iphone {
+    background-image: url("../iphone7.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: 60%;
+    height:61vw;
+    left: 75%;
+    top: 20%;
+}
+@media only screen and (max-width: 767px) {
+    #iphone {
+      display: none;
+    }
+}
+iframe {
+    position: absolute;
+    transform: scale(0.461);
+    height: 59vw;
+    bottom: 19.6%;
+    right: 20.2%;
+}
