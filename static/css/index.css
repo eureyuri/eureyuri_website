@@ -24,8 +24,9 @@ video#bgvid {
 }
 iframe {
     position: absolute;
-    transform: scale(0.465);
-    height: 54.4vw;
-    bottom: 3.1%;
-    right: 20.1%;
+    transform: scale(0.467);
+    height: 49.4vw;
+    width: 28.2vw;
+    bottom: -8.1%;
+    right: -33.8%;
 }
