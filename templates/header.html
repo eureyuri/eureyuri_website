@@ -1,57 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <!-- css and js for fullpage: fullpage.js -->
+    <link rel="stylesheet" type="text/css" href="../static/css/jquery.fullpage.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/easings.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.fullpage.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Personal website of Eurey (Yuri) Noguchi">
-  <meta name="author" content="Eurey Noguchi">
-    
-  <link rel="icon" href="../static/favicon.ico">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/footer.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/index.css">
-  
-  <title>Eurey Noguchi</title>
-</head>
+    <!-- css and js for menu: Material Design for Bootstrap 4 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="../static/css/mdb.min.css" rel="stylesheet"> -->
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="../static/js/mdb.min.js"></script> -->
 
-<body>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-      crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
-      html {
-          position: relative;
-          min-height: 100%;
-      }
-      .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
-        color: #042B73;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/" style="margin-left: 20px">
-    {#				<img src="/gr/static/logo_wg.png" style="width:101px;height:35px;"/>#}
-                    Eurey Noguchi
-                </a>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" style="z-index:10;">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse" id="navbar-collapse" style="margin-right: 30px">
-                <ul class="nav navbar-nav navbar-right">
-                  <li class="demo"><a href="/about">ABOUT</a></li>
-                  <li class="demo"><a href="/work">WORK</a></li>
-                  <li class="demo"><a href="/apps">APPLICATIONS</a></li>
-                  <li class="demo"><a href="/contact">CONTACT</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#fullpage').fullpage({
+          sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+          autoScrolling: true,
+		      // scrollHorizontally: true,
+          continuousVertical: true,
+          navigation: true,
+          navigationPosition: 'left',
+
+          afterRender: function() {
+            setInterval(function() {
+              $.fn.fullpage.moveSectionDown();
+            }, 5500);
+          }
+        });
+      });
+    </script>
+
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div id="nav_left">
+        <a href="#">AA</a>
+        <!-- <img src="images/logo.png" alt=""> -->
+      </div>
+
+      <nav class="nav_right">
+        <ul class="navbar_list">
+          <li class="navbar_item"><a href="#">About me</a></li>
+          <li class="navbar_item"><a href="#">Work</a></li>
+          <li class="navbar_item"><a href="#">Interests</a></li>
+          <li class="navbar_item"><a href="#">Login</a></li>
+          <li class="navbar_item signature">&copy; Eurey Noguchi 2017 - 2019</li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="js_hamburger">
+        <span class="hamburger_line hamburger_line1"></span>
+        <span class="hamburger_line hamburger_line2"></span>
+        <span class="hamburger_line hamburger_line3"></span>
+      </div>
+      <div class="bg_black" id="js_black_bg"></div>
+    </header>

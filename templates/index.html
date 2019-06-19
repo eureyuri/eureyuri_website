@@ -1,22 +1,82 @@
-{% include 'header.html' %}
-    <style>
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- css and js for fullpage: fullpage.js -->
+    <link rel="stylesheet" type="text/css" href="../static/css/jquery.fullpage.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/easings.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.fullpage.js"></script>
 
-    </style>
+    <!-- css and js for menu: Material Design for Bootstrap 4 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="../static/css/mdb.min.css" rel="stylesheet"> -->
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="../static/js/mdb.min.js"></script> -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 slide" style="min-height: 100%; position: relative; overflow: hidden;">
-                <video autoplay loop muted id="bgvid">
-                  <source src="../static/bg-vid.mp4" type="video/mp4">
-                </video>
-                <div style="position: fixed; padding-left:30px;padding-top: 150px;color:#eee;text-align:center;font-size:46px;">
-                  WELCOME!
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-2 col-xs-offset-8" id="iphone">
-          <iframe src="/" width="100%" height="100%"></iframe>
-        </div>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#fullpage').fullpage({
+          sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+          autoScrolling: true,
+		      // scrollHorizontally: true,
+          continuousVertical: true,
+          navigation: true,
+          navigationPosition: 'left',
+
+          afterRender: function() {
+            setInterval(function() {
+              $.fn.fullpage.moveSectionDown();
+            }, 5500);
+          }
+        });
+      });
+    </script>
+
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div id="nav_left">
+        <a href="#">AA</a>
+        <!-- <img src="images/logo.png" alt=""> -->
+      </div>
+
+      <nav class="nav_right">
+        <ul class="navbar_list">
+          <li class="navbar_item"><a href="#">About me</a></li>
+          <li class="navbar_item"><a href="#">Work</a></li>
+          <li class="navbar_item"><a href="#">Interests</a></li>
+          <li class="navbar_item"><a href="#">Login</a></li>
+          <li class="navbar_item signature">&copy; Eurey Noguchi 2017 - 2019</li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="js_hamburger">
+        <span class="hamburger_line hamburger_line1"></span>
+        <span class="hamburger_line hamburger_line2"></span>
+        <span class="hamburger_line hamburger_line3"></span>
+      </div>
+      <div class="bg_black" id="js_black_bg"></div>
+    </header>
+
+    <div id="fullpage">
+      <div class="section">Section1</div>
+      <div class="section">Section2</div>
+      <div class="section">Section3</div>
     </div>
 
-{% include 'footer.html' %}
+    <footer class="footer">
+      <!-- Icon list: https://fontawesome.com/icons -->
+      <!-- Brand colours: https://brandcolors.net/ -->
+      <a href="mailto: eureynoguchi@gmail.com" target="_blank"><i class="far fa-envelope fa-2x"></i></a>
+      <a href="https://github.com/eureyuri" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://www.linkedin.com/in/eurey-noguchi/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCOScmlJ9J2xpLwuOYQu4n9Q" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+    </footer>
+  </body>
+
+  <script type="text/javascript" src="../static/js/nav.js"></script>
+
+</html>

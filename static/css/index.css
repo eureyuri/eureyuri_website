@@ -30,3 +30,197 @@ iframe {
     bottom: -8.1%;
     right: -33.8%;
 }
+
+div img {
+  width: 160px;
+  height: auto;
+}
+
+/* Navbar css */
+/* https://tech-dig.jp/hamburger-global-nav/ */
+
+.navbar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-wrap: nowrap;
+  z-index: 100;
+  background-color: white;
+  opacity: 0.8;
+  /* padding: 0 30px; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+
+#nav_left {
+  position: absolute;
+  left: 40px;
+}
+
+.nav_right {
+  position: fixed;
+  right: -420px; /* To hide */
+  top: 0;
+  width: 400px; /* Aprroximate width of sp */
+  height: 200vh;
+  padding-top: 60px;
+  background-color: #fff;
+  transition: all .6s;
+  z-index: 200;
+  overflow-y: auto; /* For scrolling */
+}
+
+.navbar_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar_item {
+  text-align: center;
+  padding: 0 0px;
+}
+
+.signature {
+  margin-top: 10%;
+}
+
+.navbar_item a {
+  display: block;
+  padding: 30px 0;
+  /* border-bottom: 1px solid #eee; */
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 3vh;
+  /* color: #111; */
+}
+
+.navbar_item a:hover,
+.navbar_item a:focus {
+  /* background-color: #eee; */
+  background-color: #2C2D2F;
+  color: white;
+}
+
+.hamburger {
+  position: absolute;
+  right: 40px;
+  top: 2vh;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.hamburger_line {
+  position: absolute;
+  left: 11px;
+  width: 25px;
+  height: 2px;
+  background-color: #111;
+  transition: all .6s;
+}
+
+.hamburger_line1 {
+  top: 12px;
+}
+
+.hamburger_line2 {
+  top: 20px;
+}
+
+.hamburger_line3 {
+  top: 28px;
+}
+
+.bg_black {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .6s;
+  cursor: pointer;
+}
+
+/* CSS for when nav opens */
+
+.nav_open .nav_right {
+  right: 0;
+}
+
+.nav_open .bg_black {
+  opacity: .8;
+  visibility: visible;
+}
+
+.nav_open .hamburger_line1 {
+  transform: rotate(405deg);
+  top: 20px;
+}
+
+.nav_open .hamburger_line2 {
+  width: 0;
+  left: 50%;
+}
+
+.nav_open .hamburger_line3 {
+  transform: rotate(-405deg);
+  top: 20px;
+}
+
+/*
+
+#nav-right a:hover,
+#nav-right a:focus {
+  border-color: rgb(234, 46, 73);
+  background-color: rgba(44, 45, 47, 0);
+} */
+
+.section{
+    font-size: 6em;
+    text-align: center;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  background-color: transparent;
+  text-align: center;
+}
+
+i {
+  display: inline-block;
+  margin-right: 1em;
+  /* color: black; */
+}
+
+i:hover {
+  transform: rotate(360deg) scale(1.3, 1.3);
+  /* transform: scale(1.5, 1.5); */
+  transition: all .6s;
+}
+
+.fa-envelope:hover {
+  color: #ea4335;
+}
+
+.fa-github:hover {
+  color: #6e5494;
+}
+
+.fa-linkedin:hover {
+  color: #0077b5;
+}
+
+.fa-youtube:hover {
+  color: #ff0000;
+}
