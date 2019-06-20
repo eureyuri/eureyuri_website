@@ -19,7 +19,7 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $('#fullpage').fullpage({
-          sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+          sectionsColor: ['#f2f2f2', '#f2f2f2', '#f2f2f2'],
           autoScrolling: true,
 		      // scrollHorizontally: true,
           continuousVertical: true,
@@ -40,8 +40,7 @@
   <body>
     <header class="navbar">
       <div id="nav_left">
-        <a href="#">AA</a>
-        <!-- <img src="images/logo.png" alt=""> -->
+        <a href="#"><img src="../static/images/logo.png" alt=""></a>
       </div>
 
       <nav class="nav_right">
@@ -62,9 +61,11 @@
     </header>
 
     <div id="fullpage">
-      <div class="section">Section1</div>
-      <div class="section">Section2</div>
-      <div class="section">Section3</div>
+      <div class="section">
+        <p>Eurey Noguchi</p>
+        <img id="bg" src="../static/images/cover1.jpg" alt="">
+      </div>
+      <div class="section"><img src="../static/images/cover2.png" alt=""></div>
     </div>
 
     <footer class="footer">
