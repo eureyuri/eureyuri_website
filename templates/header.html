@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal website of Eurey (Yuri) Noguchi">
+    <meta name="author" content="Eurey Noguchi">
+    <title>Eurey Noguchi</title>
+
+    <!-- TODO -->
+    <!-- <link rel="icon" href="../static/favicon.ico"> -->
+
     <!-- css and js for fullpage: fullpage.js -->
     <link rel="stylesheet" type="text/css" href="../static/css/jquery.fullpage.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -19,7 +29,7 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $('#fullpage').fullpage({
-          sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+          sectionsColor: ['#f2f2f2', '#f2f2f2', '#f2f2f2'],
           autoScrolling: true,
 		      // scrollHorizontally: true,
           continuousVertical: true,
@@ -38,10 +48,11 @@
   </head>
 
   <body>
+    <language initial="en" lang="jp, en"></language>
+
     <header class="navbar">
       <div id="nav_left">
-        <a href="#">AA</a>
-        <!-- <img src="images/logo.png" alt=""> -->
+        <a href="/"><img src="../static/images/logo.png" alt=""></a>
       </div>
 
       <nav class="nav_right">
@@ -50,6 +61,12 @@
           <li class="navbar_item"><a href="#">Work</a></li>
           <li class="navbar_item"><a href="#">Interests</a></li>
           <li class="navbar_item"><a href="#">Login</a></li>
+          <li class="navbar_item">
+            <!-- https://www.flaticon.com/free-icon/japan_206789 -->
+            <a class="language" href="#jp"><img class="jp" src="../static/images/jp.png" alt=""></a>
+            <!-- https://www.flaticon.com/free-icon/united-states-of-america_555526#term=united%20states%20of%20america%20flag&page=1&position=3 -->
+            <a class="language" href="#en"><img class="en" src="../static/images/en.png" alt=""></a>
+          </li>
           <li class="navbar_item signature">&copy; Eurey Noguchi 2017 - 2019</li>
         </ul>
       </nav>

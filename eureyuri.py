@@ -12,7 +12,7 @@ def page_not_found(e):
 
 @app.route('/', methods=["GET"])
 def index():
-    return render_template("index_prev.html")
+    return render_template("index.html")
 
 
 @app.route('/about', methods=["GET"])
