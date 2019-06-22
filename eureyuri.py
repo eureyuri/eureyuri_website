@@ -25,12 +25,12 @@ def work():
     return render_template("work.html")
 
 
-@app.route('/apps', methods=["GET"])
+@app.route('/interests', methods=["GET"])
 def apps():
     return render_template("apps.html")
 
 
-@app.route('/contact', methods=["GET"])
+@app.route('/login', methods=["GET"])
 def contact():
     return render_template("contact.html")
 
