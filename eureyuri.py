@@ -26,13 +26,13 @@ def work():
 
 
 @app.route('/interests', methods=["GET"])
-def apps():
+def interests():
     return render_template("interests.html")
 
 
-@app.route('/login', methods=["GET"])
-def contact():
-    return render_template("contact.html")
+# @app.route('/login', methods=["GET"])
+# def login():
+#     return render_template("login.html")
 
 
 if __name__ == '__main__':
