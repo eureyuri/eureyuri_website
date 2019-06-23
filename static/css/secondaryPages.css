@@ -38,68 +38,88 @@ header .header-content {
   color: white;
 }
 
-header.masthead-about {
+header.masthead-about,
+header.masthead-work {
   position: relative;
   width: 100%;
   padding-top: 150px;
   padding-bottom: 100px;
-  /* color: white; */
-  background-image: url("../images/cover1.jpg");
   background-size: cover;
 }
 
-header.masthead-about .header-content {
+header.masthead-about {
+  background-image: url("../images/cover1.jpg");
+}
+
+header.masthead-work {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/cover_work.jpg');
+}
+
+header.masthead-about .header-content,
+header.masthead-work .header-content {
   max-width: 500px;
   margin-bottom: 100px;
   text-align: center;
 }
 
-header.masthead-about .header-content h1 {
+header.masthead-about .header-content h1,
+header.masthead-work .header-content h1 {
   font-size: 30px;
 }
 
 @media (min-width: 992px) {
-  header.masthead-about {
+  header.masthead-about,
+  header.masthead-work {
     height: 70vh;
     padding-top: 0;
     padding-bottom: 0;
   }
-  header.masthead-about .header-content {
+  header.masthead-about .header-content,
+  header.masthead-work .header-content {
     margin-bottom: 0;
     text-align: left;
   }
-  header.masthead-about .header-content h1 {
+  header.masthead-about .header-content h1,
+  header.masthead-work .header-content h1 {
     font-size: 50px;
   }
-  header.masthead-about .device-container {
+  header.masthead-about .device-container,
+  header.masthead-work .device-container {
     max-width: 325px;
   }
 }
 
-section.about .section-heading {
+section.about .section-heading,
+section.work .section-heading {
   margin-bottom: 30px;
   margin-left: 5%;
   margin-right: 5%;
 
 }
-section.about .section-heading h2 {
+section.about .section-heading h2,
+section.work .section-heading h2 {
   margin-top: 0;
 }
-section.about .section-heading p {
+section.about .section-heading p,
+section.work .section-heading p {
   margin-bottom: 0;
 }
 
-section.about .about-item {
+section.about .about-item,
+section.work .work-item {
   padding-top: 10px;
   padding-bottom: 10px;
   /* text-align: center; */
 }
-section.about .about-item.center {
+section.about .about-item.center,
+section.work .work-item.center {
   text-align: center;
 }
-section.about .about-item h3 {
+section.about .about-item h3,
+section.work .work-item h3 {
   font-size: 30px;
 }
-section.about .about-item img {
+section.about .about-item img,
+section.work .work-item img {
   width: 100%;
 }
