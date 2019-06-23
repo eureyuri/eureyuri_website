@@ -39,7 +39,8 @@ header .header-content {
 }
 
 header.masthead-about,
-header.masthead-work {
+header.masthead-work,
+header.masthead-interests {
   position: relative;
   width: 100%;
   padding-top: 150px;
@@ -55,71 +56,88 @@ header.masthead-work {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/cover_work.jpg');
 }
 
+header.masthead-interests {
+  background-image: url("../images/cover_interests.jpeg");
+}
+
 header.masthead-about .header-content,
-header.masthead-work .header-content {
+header.masthead-work .header-content,
+header.masthead-interests .header-content {
   max-width: 500px;
   margin-bottom: 100px;
   text-align: center;
 }
 
 header.masthead-about .header-content h1,
-header.masthead-work .header-content h1 {
+header.masthead-work .header-content h1,
+header.masthead-interests .header-content h1 {
   font-size: 30px;
 }
 
 @media (min-width: 992px) {
   header.masthead-about,
-  header.masthead-work {
+  header.masthead-work,
+  header.masthead-interests {
     height: 70vh;
     padding-top: 0;
     padding-bottom: 0;
   }
   header.masthead-about .header-content,
-  header.masthead-work .header-content {
+  header.masthead-work .header-content,
+  header.masthead-interests .header-content {
     margin-bottom: 0;
     text-align: left;
   }
   header.masthead-about .header-content h1,
-  header.masthead-work .header-content h1 {
+  header.masthead-work .header-content h1,
+  header.masthead-interests .header-content h1 {
     font-size: 50px;
   }
   header.masthead-about .device-container,
-  header.masthead-work .device-container {
+  header.masthead-work .device-container,
+  header.masthead-interests .device-container {
     max-width: 325px;
   }
 }
 
 section.about .section-heading,
-section.work .section-heading {
+section.work .section-heading,
+section.interests .section-heading {
   margin-bottom: 30px;
   margin-left: 5%;
   margin-right: 5%;
 
 }
 section.about .section-heading h2,
-section.work .section-heading h2 {
+section.work .section-heading h2,
+section.interests .section-heading h2 {
   margin-top: 0;
 }
 section.about .section-heading p,
-section.work .section-heading p {
+section.work .section-heading p,
+section.interests .section-heading p {
   margin-bottom: 0;
 }
 
 section.about .about-item,
-section.work .work-item {
+section.work .work-item,
+section.interests .interests-item {
   padding-top: 10px;
   padding-bottom: 10px;
   /* text-align: center; */
 }
 section.about .about-item.center,
-section.work .work-item.center {
+section.work .work-item.center,
+section.interests .interests-item.center {
   text-align: center;
 }
 section.about .about-item h3,
-section.work .work-item h3 {
+section.work .work-item h3,
+section.interests .interests-item h3 {
   font-size: 30px;
 }
 section.about .about-item img,
-section.work .work-item img {
+section.work .work-item img,
+section.interests .interests-item img {
   width: 100%;
 }

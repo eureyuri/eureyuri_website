@@ -27,7 +27,7 @@ def work():
 
 @app.route('/interests', methods=["GET"])
 def apps():
-    return render_template("apps.html")
+    return render_template("interests.html")
 
 
 @app.route('/login', methods=["GET"])
