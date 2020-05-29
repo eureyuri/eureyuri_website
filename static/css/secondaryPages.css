@@ -1,3 +1,25 @@
+body {
+  scroll-behavior: smooth;
+}
+
+.jump {
+  position: relative;
+  display: inline-block;
+  font-weight: 300;
+  color: #007bff;
+  overflow: hidden;
+  background: linear-gradient(to right, #007bff, #007bff 50%, white 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+}
+a:hover {
+  background-position: 0 100%;
+}
+
 hr {
   margin: 25px auto 0;
   border-width: 1px;
@@ -50,6 +72,7 @@ header.masthead-interests {
 
 header.masthead-about {
   background-image: url("../images/cover1.jpg");
+  background-position: center;
 }
 
 header.masthead-work {
@@ -57,7 +80,7 @@ header.masthead-work {
 }
 
 header.masthead-interests {
-  background-image: url("../images/cover_interests.jpeg");
+  background-image: url("../images/cover_interests2.jpg");
 }
 
 header.masthead-about .header-content,
@@ -136,6 +159,11 @@ section.work .work-item h3,
 section.interests .interests-item h3 {
   font-size: 30px;
 }
+
+.about-item h6 {
+  opacity: 0.5;
+}
+
 section.about .about-item img,
 section.work .work-item img,
 section.interests .interests-item img {
