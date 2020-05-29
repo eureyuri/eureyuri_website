@@ -50,6 +50,7 @@ header.masthead-interests {
 
 header.masthead-about {
   background-image: url("../images/cover1.jpg");
+  background-position: center;
 }
 
 header.masthead-work {
@@ -136,6 +137,11 @@ section.work .work-item h3,
 section.interests .interests-item h3 {
   font-size: 30px;
 }
+
+.about-item h6 {
+  opacity: 0.5;
+}
+
 section.about .about-item img,
 section.work .work-item img,
 section.interests .interests-item img {
