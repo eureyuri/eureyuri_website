@@ -7,7 +7,7 @@ app = Flask(__name__)
 def page_not_found(e):
     # TODO
     print(e)
-    return "404"
+    return render_template("notfound.html")
 
 
 @app.route('/', methods=["GET"])

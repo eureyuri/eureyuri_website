@@ -5,6 +5,7 @@ body {
   /* font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif'; */
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 video#bgvid {
@@ -58,7 +59,7 @@ div img {
   z-index: 100;
   background-color: white;
   opacity: 0.8;
-  /* padding: 0 30px; */
+  padding: 0 30px;
   /* align-items: center; */
   /* justify-content: space-between; */
 }
