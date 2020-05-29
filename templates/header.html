@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Personal website of Eurey (Yuri) Noguchi">
+    <meta name="keywords" content="Eurey Noguchi, Resume, Personal website, Job">
     <meta name="author" content="Eurey Noguchi">
     <title>Eurey Noguchi</title>
 
@@ -32,14 +33,14 @@
           sectionsColor: ['#f2f2f2', '#f2f2f2', '#f2f2f2'],
           autoScrolling: true,
 		      // scrollHorizontally: true,
-          continuousVertical: true,
+          // continuousVertical: true,
           navigation: true,
           navigationPosition: 'left',
 
           afterRender: function() {
             setInterval(function() {
               $.fn.fullpage.moveSectionDown();
-            }, 5500);
+            }, 3000);
           }
         });
       });
@@ -55,25 +56,13 @@
         <a href="/"><img src="../static/images/logo.png" alt=""></a>
       </div>
 
-      <nav class="nav_right">
-        <ul class="navbar_list">
-          <li class="navbar_item"><a href="/about">About me</a></li>
-          <li class="navbar_item"><a href="/work">Work</a></li>
-          <li class="navbar_item"><a href="/interests">Interests</a></li>
-          <!-- <li class="navbar_item"><a href="/login">Login</a></li> -->
-          <li class="navbar_item">
-            <!-- https://www.flaticon.com/free-icon/japan_206789 -->
-            <a class="language" href="#jp"><img class="jp" src="../static/images/jp.png" alt=""></a>
-            <!-- https://www.flaticon.com/free-icon/united-states-of-america_555526#term=united%20states%20of%20america%20flag&page=1&position=3 -->
-            <a class="language" href="#en"><img class="en" src="../static/images/en.png" alt=""></a>
-          </li>
-          <li class="navbar_item signature">&copy; Eurey Noguchi 2017 - 2019</li>
-        </ul>
-      </nav>
+      {% include 'nav_right.html' %}
+
       <div class="hamburger" id="js_hamburger">
         <span class="hamburger_line hamburger_line1"></span>
         <span class="hamburger_line hamburger_line2"></span>
         <span class="hamburger_line hamburger_line3"></span>
       </div>
       <div class="bg_black" id="js_black_bg"></div>
+
     </header>
