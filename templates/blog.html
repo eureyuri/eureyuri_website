@@ -9,10 +9,16 @@
 {% block content %}
   {% for entry in object_list %}
     <h3>
-      <a class="jump_black" href="{% if entry.published %}{{ url_for('detail', slug=entry.slug) }}{% else %}{{ url_for('edit', slug=entry.slug) }}{% endif %}">
-        {{ entry.title }}
-      </a>
-      <p style="float: right;"> {{ entry.timestamp.strftime('%m/%d/%Y') }}</p>
+      <div class="row">
+        <div class="col-sm-10">
+          <a class="jump_black" href="{% if entry.published %}{{ url_for('detail', slug=entry.slug) }}{% else %}{{ url_for('edit', slug=entry.slug) }}{% endif %}">
+            {{ entry.title }}
+          </a>
+        </div>
+        <div class="col-sm-2">
+          <p style="float: right;"> {{ entry.timestamp.strftime('%m/%d/%Y') }}</p>
+        </div>
+      </div>
     </h3>
   {% else %}
     <p>No entries have been created yet.</p>
