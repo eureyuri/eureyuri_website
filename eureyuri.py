@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 @app.errorhandler(404)
 def page_not_found(e):
-    # TODO
     print(e)
     return render_template("notfound.html")
 
