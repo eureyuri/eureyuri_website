@@ -19,9 +19,9 @@ def about():
     return render_template("about.html")
 
 
-@app.route('/work', methods=["GET"])
+@app.route('/blog', methods=["GET"])
 def work():
-    return render_template("work.html")
+    return render_template("blog.html")
 
 
 @app.route('/interests', methods=["GET"])
