@@ -1,16 +1,24 @@
 {% extends "base.html" %}
 
+{% block head %}{{ entry.title }}{% endblock %}
+
 {% block title %}{{ entry.title }}{% endblock %}
 
 {% block content_title %}{{ entry.title }}{% endblock %}
 
 {% block extra_header %}
   {% if session.logged_in %}
-    <li><a href="{{ url_for('edit', slug=entry.slug) }}">Edit entry</a></li>
+    <div class="col-lg-12 my-auto" style="text-align:center; margin-top:0px!important;">
+      <div class="row">
+        <div class="col-sm-12">
+          <h5><a class="jump" href="{{ url_for('edit', slug=entry.slug) }}">Edit entry</a></h5>
+        </div>
+      </div>
+    </div>
   {% endif %}
 {% endblock %}
 
 {% block content %}
-  <p>Created {{ entry.timestamp.strftime('%m/%d/%Y at %I:%M%p') }}</p>
+  <p>{{ entry.timestamp.strftime('%m/%d/%Y') }}</p>
   {{ entry.html_content }}
 {% endblock %}

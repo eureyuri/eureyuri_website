@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block head %}Blog{% endblock %}
+
 {% block title %}Blog entries{% endblock %}
 
 {% block content_title %}{% if search %}Search "{{ search }}"{% else %}Blog entries{% endif %}{% endblock %}
@@ -7,11 +9,11 @@
 {% block content %}
   {% for entry in object_list %}
     <h3>
-      <a href="{% if entry.published %}{{ url_for('detail', slug=entry.slug) }}{% else %}{{ url_for('edit', slug=entry.slug) }}{% endif %}">
+      <a class="jump_black" href="{% if entry.published %}{{ url_for('detail', slug=entry.slug) }}{% else %}{{ url_for('edit', slug=entry.slug) }}{% endif %}">
         {{ entry.title }}
       </a>
+      <p style="float: right;"> {{ entry.timestamp.strftime('%m/%d/%Y') }}</p>
     </h3>
-    <p>Created {{ entry.timestamp.strftime('%m/%d/%Y at %G:%I%p') }}</p>
   {% else %}
     <p>No entries have been created yet.</p>
   {% endfor %}

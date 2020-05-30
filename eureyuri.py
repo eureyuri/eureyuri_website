@@ -15,13 +15,15 @@ from micawber.cache import Cache as OEmbedCache
 from peewee import *
 from playhouse.flask_utils import FlaskDB, get_object_or_404, object_list
 from playhouse.sqlite_ext import *
+from dotenv import load_dotenv
 
 
-ADMIN_PASSWORD = 'secret'
+load_dotenv()
+ADMIN_PASSWORD = os.environ["ADMIN_PASSWORD"]
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
 DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'blog.db')
 DEBUG = False
-SECRET_KEY = 'shhh, secret!'  # Used by Flask to encrypt session cookie.
+SECRET_KEY = os.environ["SECRET_KEY"]  # Used by Flask to encrypt session cookie.
 SITE_WIDTH = 800
 
 
@@ -191,6 +193,7 @@ def blog():
         query,
         search=search_query,
         check_bounds=False)
+
 
 def _create_or_edit(entry, template):
     if request.method == 'POST':
