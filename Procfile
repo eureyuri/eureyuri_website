@@ -1,1 +1,1 @@
-web: gunicorn eureyuri:app
+web: gunicorn eureyuri:app --log-file=-
