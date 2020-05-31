@@ -22,7 +22,7 @@ from peewee import *
 from playhouse.flask_utils import FlaskDB, get_object_or_404, object_list
 from playhouse.postgres_ext import *
 from dotenv import load_dotenv
-import urlparse
+from urllib.parse import urlparse
 
 
 load_dotenv()
