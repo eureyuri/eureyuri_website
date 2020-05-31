@@ -22,13 +22,26 @@ from peewee import *
 from playhouse.flask_utils import FlaskDB, get_object_or_404, object_list
 from playhouse.postgres_ext import *
 from dotenv import load_dotenv
+import urlparse
 
 
 load_dotenv()
 ADMIN_PASSWORD = os.environ["ADMIN_PASSWORD"]
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
 # DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'blog.db')
-DATABASE = os.environ['DATABASE_URL']
+# DATABASE = os.environ['DATABASE_URL']
+
+urlparse.uses_netloc.append('postgres')
+url = urlparse.urlparse(os.environ['DATABASE_URL'])
+# for your config
+DATABASE = {
+    'engine': 'peewee.PostgresqlDatabase',
+    'name': url.path[1:],
+    'password': url.password,
+    'host': url.hostname,
+    'port': url.port,
+}
+
 DEBUG = False
 SECRET_KEY = os.environ["SECRET_KEY"]  # Used by Flask to encrypt session cookie.
 SITE_WIDTH = 800
