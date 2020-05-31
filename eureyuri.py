@@ -1,3 +1,9 @@
+# https://charlesleifer.com/blog/how-to-make-a-flask-blog-in-one-hour-or-less/
+# https://qiita.com/colorrabbit/items/18db3c97734f32ebdfde
+# https://devcenter.heroku.com/articles/getting-started-with-python#define-config-vars
+# https://about.gitlab.com/handbook/markdown-guide/
+
+
 from flask import Flask, render_template, abort, flash, Markup, redirect, request, Response, session, url_for
 from flask_security import login_required
 
@@ -14,14 +20,15 @@ from micawber import bootstrap_basic, parse_html
 from micawber.cache import Cache as OEmbedCache
 from peewee import *
 from playhouse.flask_utils import FlaskDB, get_object_or_404, object_list
-from playhouse.sqlite_ext import *
+from playhouse.postgres_ext import *
 from dotenv import load_dotenv
 
 
 load_dotenv()
 ADMIN_PASSWORD = os.environ["ADMIN_PASSWORD"]
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
-DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'blog.db')
+# DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'blog.db')
+DATABASE = os.environ['DATABASE_URL']
 DEBUG = False
 SECRET_KEY = os.environ["SECRET_KEY"]  # Used by Flask to encrypt session cookie.
 SITE_WIDTH = 800
@@ -67,27 +74,27 @@ class Entry(flask_db.Model):
         ret = super(Entry, self).save(*args, **kwargs)
 
         # Store search content.
-        self.update_search_index()
+        # self.update_search_index()
         return ret
 
-    def update_search_index(self):
-        # Create a row in the FTSEntry table with the post content. This will
-        # allow us to use SQLite's awesome full-text search extension to
-        # search our entries.
-        exists = (FTSEntry
-                  .select(FTSEntry.docid)
-                  .where(FTSEntry.docid == self.id)
-                  .exists())
-        content = '\n'.join((self.title, self.content))
-        if exists:
-            (FTSEntry
-             .update({FTSEntry.content: content})
-             .where(FTSEntry.docid == self.id)
-             .execute())
-        else:
-            FTSEntry.insert({
-                FTSEntry.docid: self.id,
-                FTSEntry.content: content}).execute()
+    # def update_search_index(self):
+    #     # Create a row in the FTSEntry table with the post content. This will
+    #     # allow us to use SQLite's awesome full-text search extension to
+    #     # search our entries.
+    #     exists = (FTSEntry
+    #               .select(FTSEntry.docid)
+    #               .where(FTSEntry.docid == self.id)
+    #               .exists())
+    #     content = '\n'.join((self.title, self.content))
+    #     if exists:
+    #         (FTSEntry
+    #          .update({FTSEntry.content: content})
+    #          .where(FTSEntry.docid == self.id)
+    #          .execute())
+    #     else:
+    #         FTSEntry.insert({
+    #             FTSEntry.docid: self.id,
+    #             FTSEntry.content: content}).execute()
 
     @classmethod
     def public(cls):
@@ -97,32 +104,32 @@ class Entry(flask_db.Model):
     def drafts(cls):
         return Entry.select().where(Entry.published == False)
 
-    @classmethod
-    def search(cls, query):
-        words = [word.strip() for word in query.split() if word.strip()]
-        if not words:
-            # Return an empty query.
-            return Entry.noop()
-        else:
-            search = ' '.join(words)
+    # @classmethod
+    # def search(cls, query):
+    #     words = [word.strip() for word in query.split() if word.strip()]
+    #     if not words:
+    #         # Return an empty query.
+    #         return Entry.noop()
+    #     else:
+    #         search = ' '.join(words)
+    #
+    #     # Query the full-text search index for entries matching the given
+    #     # search query, then join the actual Entry data on the matching
+    #     # search result.
+    #     return (Entry
+    #             .select(Entry, FTSEntry.rank().alias('score'))
+    #             .join(FTSEntry, on=(Entry.id == FTSEntry.docid))
+    #             .where(
+    #                 FTSEntry.match(search) &
+    #                 (Entry.published == True))
+    #             .order_by(SQL('score')))
 
-        # Query the full-text search index for entries matching the given
-        # search query, then join the actual Entry data on the matching
-        # search result.
-        return (Entry
-                .select(Entry, FTSEntry.rank().alias('score'))
-                .join(FTSEntry, on=(Entry.id == FTSEntry.docid))
-                .where(
-                    FTSEntry.match(search) &
-                    (Entry.published == True))
-                .order_by(SQL('score')))
 
-
-class FTSEntry(FTSModel):
-    content = TextField()
-
-    class Meta:
-        database = database
+# class FTSEntry(FTSModel):
+#     content = TextField()
+#
+#     class Meta:
+#         database = database
 
 
 @app.errorhandler(404)
@@ -178,11 +185,11 @@ def logout():
 
 @app.route('/blog/')
 def blog():
-    search_query = request.args.get('q')
-    if search_query:
-        query = Entry.search(search_query)
-    else:
-        query = Entry.public().order_by(Entry.timestamp.desc())
+    # search_query = request.args.get('q')
+    # if search_query:
+    #     query = Entry.search(search_query)
+    # else:
+    query = Entry.public().order_by(Entry.timestamp.desc())
 
     # The `object_list` helper will take a base query and then handle
     # paginating the results if there are more than 20. For more info see
@@ -191,7 +198,7 @@ def blog():
     return object_list(
         'blog.html',
         query,
-        search=search_query,
+        search="",
         check_bounds=False)
 
 
@@ -260,7 +267,7 @@ def clean_querystring(request_args, *keys_to_remove, **new_values):
 
 
 def main():
-    database.create_tables([Entry, FTSEntry])
+    database.create_tables([Entry])
     app.run(debug=True)
 
 
