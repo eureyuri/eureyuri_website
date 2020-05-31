@@ -24,22 +24,12 @@ from playhouse.postgres_ext import *
 from dotenv import load_dotenv
 
 
+
 load_dotenv()
 ADMIN_PASSWORD = os.environ["ADMIN_PASSWORD"]
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
 # DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'blog.db')
-# DATABASE = os.environ['DATABASE_URL']
-
-urllib.parse.uses_netloc.append('postgres')
-url = urllib.parse.urlparse(os.environ['DATABASE_URL'])
-# for your config
-DATABASE = {
-    'engine': 'peewee.PostgresqlDatabase',
-    'name': url.path[1:],
-    'password': url.password,
-    'host': url.hostname,
-    'port': url.port,
-}
+DATABASE = os.environ['DATABASE_URL']
 
 DEBUG = False
 SECRET_KEY = os.environ["SECRET_KEY"]  # Used by Flask to encrypt session cookie.
