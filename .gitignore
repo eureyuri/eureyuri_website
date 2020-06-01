@@ -3,7 +3,6 @@ _site
 .jekyll-metadata
 .DS_Store
 .idea
-*.mp4
 venv
 .env
 *.db
