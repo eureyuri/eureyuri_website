@@ -6,6 +6,7 @@
 
 from flask import Flask, render_template, abort, flash, Markup, redirect, request, Response, session, url_for
 from flask_security import login_required
+from flask_bcrypt import Bcrypt
 
 # blog
 import datetime
@@ -24,7 +25,6 @@ from playhouse.postgres_ext import *
 from dotenv import load_dotenv
 
 
-
 load_dotenv()
 ADMIN_PASSWORD = os.environ["ADMIN_PASSWORD"]
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -38,6 +38,7 @@ SITE_WIDTH = 800
 
 app = Flask(__name__)
 app.config.from_object(__name__)
+bcrypt = Bcrypt(app)
 
 flask_db = FlaskDB(app)
 database = flask_db.database
@@ -168,9 +169,8 @@ def login():
     next_url = request.args.get('next') or request.form.get('next')
     if request.method == 'POST' and request.form.get('password'):
         password = request.form.get('password')
-        # TODO: If using a one-way hash, you would also hash the user-submitted
-        # password and do the comparison on the hashed versions.
-        if password == app.config['ADMIN_PASSWORD']:
+        pw_hash = bcrypt.generate_password_hash(password)
+        if bcrypt.check_password_hash(pw_hash, app.config['ADMIN_PASSWORD']):
             session['logged_in'] = True
             session.permanent = True  # Use cookie to store session.
             return redirect(next_url or url_for('blog'))
