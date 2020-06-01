@@ -81,7 +81,8 @@ header .header-content {
 
 header.masthead-about,
 header.masthead-work,
-header.masthead-interests {
+header.masthead-interests,
+header.masthead-blog {
   position: relative;
   width: 100%;
   padding-top: 150px;
@@ -103,9 +104,15 @@ header.masthead-interests {
   background-position: center top;
 }
 
+header.masthead-blog {
+  background-image: url("../images/cover_blog.jpg");
+  background-position: center center;
+}
+
 header.masthead-about .header-content,
 header.masthead-work .header-content,
-header.masthead-interests .header-content {
+header.masthead-interests .header-content,
+header.masthead-blog .header-content {
   max-width: 500px;
   margin-bottom: 100px;
   text-align: center;
@@ -113,32 +120,37 @@ header.masthead-interests .header-content {
 
 header.masthead-about .header-content h1,
 header.masthead-work .header-content h1,
-header.masthead-interests .header-content h1 {
+header.masthead-interests .header-content h1,
+header.masthead-blog .header-content h1 {
   font-size: 30px;
 }
 
 @media (min-width: 992px) {
   header.masthead-about,
   header.masthead-work,
-  header.masthead-interests {
+  header.masthead-interests,
+  header.masthead-blog {
     height: 70vh;
     padding-top: 0;
     padding-bottom: 0;
   }
   header.masthead-about .header-content,
   header.masthead-work .header-content,
-  header.masthead-interests .header-content {
+  header.masthead-interests .header-content,
+  header.masthead-blog .header-content {
     margin-bottom: 0;
     text-align: left;
   }
   header.masthead-about .header-content h1,
   header.masthead-work .header-content h1,
-  header.masthead-interests .header-content h1 {
+  header.masthead-interests .header-content h1,
+  header.masthead-blog .header-content h1 {
     font-size: 50px;
   }
   header.masthead-about .device-container,
   header.masthead-work .device-container,
-  header.masthead-interests .device-container {
+  header.masthead-interests .device-container,
+  header.masthead-blog .device-container {
     max-width: 325px;
   }
 }
