@@ -7,7 +7,6 @@
 from flask import Flask, render_template, abort, flash, Markup, redirect, request, Response, session, url_for
 from flask_security import login_required
 from flask_bcrypt import Bcrypt
-import sys
 
 # blog
 import datetime
@@ -29,12 +28,8 @@ from dotenv import load_dotenv
 load_dotenv()
 ADMIN_PASSWORD = os.environ["ADMIN_PASSWORD"]
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
-
-try:
-    if (sys.argv[1] is "l"):
-        DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'blog.db')
-except Exception as e:
-    DATABASE = os.environ['DATABASE_URL']
+# DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'blog.db')
+DATABASE = os.environ['DATABASE_URL']
 
 DEBUG = False
 SECRET_KEY = os.environ["SECRET_KEY"]  # Used by Flask to encrypt session cookie.
