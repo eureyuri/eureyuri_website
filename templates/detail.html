@@ -19,6 +19,6 @@
 {% endblock %}
 
 {% block content %}
-  <p>{{ entry.timestamp.strftime('%m/%d/%Y') }}</p>
+  <p>Updated: {{ entry.timestamp.strftime('%m/%d/%Y') }}</p>
   {{ entry.html_content }}
 {% endblock %}

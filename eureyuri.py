@@ -209,6 +209,7 @@ def _create_or_edit(entry, template):
         entry.title = request.form.get('title') or ''
         entry.content = request.form.get('content') or ''
         entry.published = request.form.get('published') or False
+        entry.timestamp = datetime.datetime.now()
         if not (entry.title and entry.content):
             flash('Title and Content are required.', 'danger')
         else:

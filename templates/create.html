@@ -24,7 +24,7 @@
       <div class="col-sm-offset-2 col-sm-10">
         <div class="checkbox">
           <label>
-            <input name="published" type="checkbox" value="y"{% if entry.published %} checked="checked"{% endif %}> Published?
+            <input name="published" type="checkbox" value="y"{% if entry.published %} checked="checked"{% endif %}> Publish
           </label>
         </div>
       </div>
@@ -32,7 +32,7 @@
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <button class="btn btn-primary" type="submit">{% block save_button %}Create{% endblock %}</button>
-        <a class="btn btn-default" href="{{ url_for('index') }}">Cancel</a>
+        <a class="btn btn-default" href="{{ url_for('blog') }}">Cancel</a>
         {% block delete_button %}{% endblock %}
       </div>
     </div>
