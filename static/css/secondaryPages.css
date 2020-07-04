@@ -227,3 +227,19 @@ section.interests .interests-item img {
   from, to { border-color: transparent }
   50% { border-color: white }
 }
+
+
+/* ABOUT */
+.complang {
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .complang {
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 40px;
+  }
+}
