@@ -235,10 +235,80 @@ section.interests .interests-item img {
   margin-bottom: 40px;
 }
 
+.bg-0-eurey {
+  padding-bottom:100px;
+  background-image:url('../images/eurey_nobg.png');
+  background-position: right bottom;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
 @media only screen and (max-width: 768px) {
   .complang {
     margin-right: 15px;
     margin-left: 15px;
     margin-bottom: 40px;
+  }
+
+  .bg-0-eurey {
+    padding-bottom:100px;
+    background-image:url('../images/eurey_nobg.png');
+    background-position: right bottom;
+    background-size: 80%;
+    background-repeat: no-repeat;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .bg-0-eurey {
+    padding-bottom:100px;
+    background-image:url('../images/eurey_nobg.png');
+    background-position: right bottom;
+    background-size: 70%;
+    background-repeat: no-repeat;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .bg-0-eurey {
+    padding-bottom:100px;
+    background-image:url('../images/eurey_nobg.png');
+    background-position: right bottom;
+    background-size: 50%;
+    background-repeat: no-repeat;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .bg-0-eurey {
+    padding-bottom:100px;
+    background-image:url('../images/eurey_nobg.png');
+    background-position: right bottom;
+    background-size: 70%;
+    background-repeat: no-repeat;
+  }
+}
+
+@media only screen and (max-width: 562px) {
+  .bg-0-eurey {
+    padding-bottom:100px;
+    background-image:url('../images/eurey_nobg.png');
+    background-position: right bottom;
+    background-size: 60%;
+    background-repeat: no-repeat;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .bg-0-eurey {
+    padding-bottom:100px;
+    background-image:url('../images/eurey_nobg.png');
+    background-position: right bottom;
+    background-size: 80%;
+    background-repeat: no-repeat;
+  }
+
+  .center {
+    justify-content: center !important;
   }
 }
