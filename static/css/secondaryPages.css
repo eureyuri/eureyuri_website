@@ -310,5 +310,6 @@ section.interests .interests-item img {
 
   .center {
     justify-content: center !important;
+    margin-right: 0px !important;
   }
 }
