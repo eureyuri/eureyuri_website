@@ -28,8 +28,8 @@ from dotenv import load_dotenv
 load_dotenv()
 ADMIN_PASSWORD = os.environ["ADMIN_PASSWORD"]
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
-DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'blog.db')
-# DATABASE = os.environ['DATABASE_URL']
+# DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'blog.db')
+DATABASE = os.environ['DATABASE_URL']
 
 DEBUG = False
 SECRET_KEY = os.environ["SECRET_KEY"]  # Used by Flask to encrypt session cookie.
