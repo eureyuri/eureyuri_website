@@ -1,3 +1,11 @@
+html {
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
 .section{
   font-size: 6em;
   text-align: center;
@@ -74,43 +82,73 @@
   background-position: center;
 }
 
-/* .info_boxes {
+.cover5 {
   width: 100%;
   height: 100%;
+  background-image: url("../images/cover5.png");
+  background-size:cover;
+  background-position: center;
+}
+
+.project-box-container {
+  padding-top: 20%;
+}
+
+.project-box {
+  height: 30%;
+  top: 40%;
   display: flex;
-  justify-content: space-around;
-  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  color: #4C4C4C;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
-.info_box {
+.project {
+  flex: 200px;
   background: white;
-  width: 40%;
-  height: 10vh;
-  padding: 120px;
-  margin: 120px 20px 10px 10px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  opacity: 0.7;
-  position: relative;
+  opacity: 0.9;
+  border-radius: 5px;
+  margin: 0 10px;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
-.info_box h2 {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+.img-cont {
+  display: block;
 }
 
-@media (max-width: 700px) {
-  .info_boxes {
-    display: table;
+.text-cont {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.text-cont.project-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+@media (max-width: 545px) {
+  .project-h2 {
+    top: 10% !important;
   }
-  .info_box {
-    width: 100%;
-    margin-bottom: 10px;
+  .project-box {
+    height: 30%;
+    top: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    color: #4C4C4C;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 20%;
   }
-} */
+}
 
 .lang {
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -164,6 +202,20 @@
     blink-caret .75s step-end infinite;
 }
 
+.typewriter-black {
+  width: fit-content;
+  color: black;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid black; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 1s steps(70, end),
+    blink-caret-black .75s step-end infinite;
+}
+
 /* The typing effect */
 @keyframes typing {
   from { width: 0% }
@@ -174,4 +226,9 @@
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: white }
+}
+
+@keyframes blink-caret-black {
+  from, to { border-color: transparent }
+  50% { border-color: black }
 }

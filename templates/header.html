@@ -34,20 +34,29 @@
     <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/footer.css') }}" />
 
     <script type="text/javascript">
+      var g_moveDownId;
 
       $(document).ready(function() {
         $('#fullpage').fullpage({
           sectionsColor: ['#f2f2f2', '#f2f2f2', '#f2f2f2'],
-          autoScrolling: true,
+          autoScrolling: false,
 		      // scrollHorizontally: true,
           // continuousVertical: true,
           navigation: true,
           navigationPosition: 'left',
+          loopBottom: true,
+          scrollBar:false,
 
           afterRender: function() {
-            setInterval(function() {
+            g_moveDownId = setInterval(function() {
               $.fn.fullpage.moveSectionDown();
             }, 3000);
+          },
+
+          afterLoad: function (anchorLink, index) {
+            if (index == 3) {
+                clearInterval(g_moveDownId);
+            }
           }
         });
       });
