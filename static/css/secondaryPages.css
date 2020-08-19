@@ -93,19 +93,16 @@ header.masthead-blog {
 header.masthead-about {
   background-image: url("../images/cover1.jpg");
   background-position: center;
-  background-attachment: fixed;
 }
 
 header.masthead-interests {
   background-image: url("../images/cover_interests2.jpg");
   background-position: center top;
-  background-attachment: fixed;
 }
 
 header.masthead-blog {
   background-image: url("../images/cover_blog.jpg");
   background-position: center center;
-  background-attachment: fixed;
 }
 
 header.masthead-about .header-content,
