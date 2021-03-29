@@ -27,7 +27,7 @@ passlib==1.7.2
 peewee==3.13.3
 psycopg2==2.8.5
 pycparser==2.20
-Pygments==2.6.1
+Pygments==2.7.4
 python-dotenv==0.13.0
 pytz==2020.1
 six==1.15.0
